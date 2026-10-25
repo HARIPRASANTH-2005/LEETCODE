@@ -1,0 +1,25 @@
+class Solution:
+    def maxArea(self, height: list[int]) -> int:# optimal(two pointer)
+        n = len(height)
+
+        l = 0
+        r = n - 1
+        ans = float("-inf")
+
+        while l < r:
+            h = min(height[l], height[r])
+            le = r - l
+
+            cur = h * le
+            ans = max(cur, ans)
+
+            if height[l] < height[r]:
+                l = l + 1
+            else:
+                r -= 1
+            
+
+        return ans 
+
+
+
