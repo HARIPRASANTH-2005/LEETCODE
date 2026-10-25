@@ -1,0 +1,13 @@
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+# Brute force
+        n = len(nums)
+        z = 0
+        for i in range(0,n-1):
+            for j in range(i+1,n):
+                if (nums[i] + nums[j]) == target:
+                    z = 1
+                    return [i,j]
+        
+        if z == 0:
+            return -1
